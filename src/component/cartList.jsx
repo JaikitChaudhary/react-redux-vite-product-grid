@@ -1,6 +1,7 @@
-import { Menu, MenuItem } from "@material-ui/core";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
-const CartList = (cartData, handleShowCart, showCart, cartElemRef) => {
+const CartList = (cartData, handleShowCart, showCart = false, cartElemRef) => {
   return (
     <Menu
       anchorEl={cartElemRef?.currentTarget}

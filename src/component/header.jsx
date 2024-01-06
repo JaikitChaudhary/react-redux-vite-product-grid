@@ -1,13 +1,8 @@
-import {
-  AppBar,
-  Badge,
-  Grid,
-  Menu,
-  MenuItem,
-  Toolbar,
-} from "@material-ui/core";
+import AppBar from "@mui/material/AppBar";
+import Badge from "@mui/material/Badge";
+import Grid from "@mui/material/Grid";
+import Toolbar from "@mui/material/Toolbar";
 import React from "react";
-import { useState } from "react";
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { showCart } from "../actions/cart.action";
@@ -42,7 +37,7 @@ const Header = () => {
                 <Badge badgeContent={cartDataCount || 0} color="primary">
                   <img
                     src="cart.png"
-                    onClick={() => setShowCart(true)}
+                    onClick={() => handleShowCart(true)}
                     style={{ paddingTop: "10px", cursor: "pointer" }}
                     width={30}
                   />

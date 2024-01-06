@@ -1,7 +1,7 @@
 import React from "react";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, deleteToCart, updateToCart } from "../../actions/cart.action";
 
@@ -18,13 +18,13 @@ const Products = () => {
   };
   return (
     <div style={{ paddingTop: "80px" }}>
-      <GridList cellHeight={400} cols={4}>
+      <ImageList rowHeight={400} cols={4}>
         {productData.map((tile) => {
           const cartValue = cartData.find((item) => item.id === tile.id);
           return (
-            <GridListTile key={tile.img}>
+            <ImageListItem key={tile.id}>
               <img src={tile.img} alt={tile.title} />
-              <GridListTileBar
+              <ImageListItemBar
                 title={tile.title}
                 subtitle={<span>by: {tile.author}</span>}
                 actionIcon={
@@ -72,10 +72,10 @@ const Products = () => {
                   )
                 }
               />
-            </GridListTile>
+            </ImageListItem>
           );
         })}
-      </GridList>
+      </ImageList>
     </div>
   );
 };
